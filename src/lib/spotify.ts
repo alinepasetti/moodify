@@ -26,3 +26,12 @@ export const topTracks = async () => {
     },
   });
 };
+
+export const getTrack = async (id: string) => {
+  const { access_token } = await getAccessToken();
+  return fetch(`https://api.spotify.com/v1/tracks/${id}`, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
