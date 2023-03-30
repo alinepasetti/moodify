@@ -2,13 +2,16 @@ import ProgressBar from 'components/ProgressBar';
 import * as Styled from './styles';
 import { memo } from 'react';
 import AudioControls from 'components/AudioControls';
+import { CurrentTimeProvider } from '../../contexts/CurrentTimeProvider';
 
 const Player = () => {
   return (
-    <Styled.Container>
-      <ProgressBar />
-      <AudioControls />
-    </Styled.Container>
+    <CurrentTimeProvider>
+      <Styled.Container>
+        <ProgressBar />
+        <AudioControls />
+      </Styled.Container>
+    </CurrentTimeProvider>
   );
 };
 
