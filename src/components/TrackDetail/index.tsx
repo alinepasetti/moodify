@@ -12,10 +12,14 @@ const TrackDetail = () => {
 
   return (
     <Styled.Container>
-      <Text>{album}</Text>
-      <AlbumImage />
-      <TrackInfo />
-      <Player />
+      <div>
+        <Text>{album}</Text>
+        <AlbumImage />
+      </div>
+      <div>
+        <TrackInfo />
+        <Player />
+      </div>
     </Styled.Container>
   );
 };

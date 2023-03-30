@@ -1,9 +1,9 @@
 import { ActiveTrackContext } from '../../contexts/ActiveTrackProvider/context';
-import { useContext } from 'react';
+import { useContext, lazy, Suspense } from 'react';
 import * as Styled from './styles';
 import { RequestStatus } from '../../hooks/useFetch';
 import Heading from '../../components/Heading';
-import Track from '../../components/TrackDetail';
+const Track = lazy(() => import('../../components/TrackDetail'));
 
 function TrackDetail() {
   const { requestStatus, activeTrack } = useContext(ActiveTrackContext);
@@ -18,7 +18,11 @@ function TrackDetail() {
         requestStatus === RequestStatus.IDLE ||
         !activeTrack) && <Heading>LOADING...</Heading>}
 
-      {requestStatus === RequestStatus.SUCCESS && <Track />}
+      {requestStatus === RequestStatus.SUCCESS && (
+        <Suspense fallback={<Heading>LOADING...</Heading>}>
+          <Track />
+        </Suspense>
+      )}
     </Styled.Container>
   );
 }

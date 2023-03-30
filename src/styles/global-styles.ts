@@ -35,6 +35,11 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.secondaryColor};
   }
 
+  #__next {
+    width: 100%;
+    min-height: 100vh;
+  }
+
   .table {
     width: 100%;
     overflow-y: auto;
