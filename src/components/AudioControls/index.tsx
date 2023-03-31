@@ -7,17 +7,26 @@ import {
   BsFillPlayFill,
   BsFillPauseFill,
 } from 'react-icons/bs';
+import { ActiveTrackContext } from 'contexts/ActiveTrackProvider/context';
 
 const AudioControls = () => {
-  const { isPlaying } = useContext(CurrentTimeContext);
+  const { isPlaying, togglePlaying, audioPlayerRef } =
+    useContext(CurrentTimeContext);
+  const {
+    activeTrack: { audioSrc },
+  } = useContext(ActiveTrackContext);
 
   return (
     <Styled.Container>
-      <Styled.AudioPlayer />
+      <Styled.AudioPlayer
+        ref={audioPlayerRef}
+        src={audioSrc}
+        preload="metadata"
+      />
       <Styled.ForwardBackwardButton>
         <BsArrowLeftShort />
       </Styled.ForwardBackwardButton>
-      <Styled.PlayPauseButton>
+      <Styled.PlayPauseButton onClick={togglePlaying}>
         {isPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}
       </Styled.PlayPauseButton>
       <Styled.ForwardBackwardButton>

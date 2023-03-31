@@ -6,13 +6,24 @@ export type CurrentTimeProviderProps = {
 };
 
 export const CurrentTimeProvider = ({ children }: CurrentTimeProviderProps) => {
-  const { isPlaying, togglePlaying } = useCurrentTime();
+  const {
+    isPlaying,
+    togglePlaying,
+    duration,
+    currentTime,
+    audioPlayerRef,
+    progressBarRef,
+  } = useCurrentTime();
 
   return (
     <CurrentTimeContext.Provider
       value={{
         isPlaying,
         togglePlaying,
+        duration,
+        currentTime,
+        audioPlayerRef,
+        progressBarRef,
       }}
     >
       {children}

@@ -7,7 +7,7 @@ export const parseSpotifyResponse = (response: RawTrack): Track => {
     artist: response.artists.map((artist) => artist.name),
     album: response.album.name,
     imgUrl: response.album.images[0].url,
-    preview_url: response.preview_url,
+    audioSrc: response.preview_url,
     duration_ms: response.duration_ms,
   };
 };

@@ -6,7 +6,7 @@ export type Track = {
   artist: string[];
   album: string;
   imgUrl: string;
-  preview_url: string;
+  audioSrc: string;
   duration_ms: number;
 };
 
@@ -67,7 +67,7 @@ export type RawTrack = {
   is_local: boolean;
   name: string;
   popularity: number;
-  preview_url: null;
+  preview_url: string;
   track_number: number;
   type: 'track';
   uri: string;
