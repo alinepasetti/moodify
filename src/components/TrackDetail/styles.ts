@@ -1,12 +1,14 @@
 import { Image } from 'components/AlbumImage/styles';
+import { MoodStyle } from 'contexts/MoodProvider/types';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<MoodStyle>`
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  color: ${({ theme }) => theme.colors.white};
 
   &> div {
     width: 100%;

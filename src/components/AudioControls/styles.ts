@@ -1,3 +1,4 @@
+import { MoodStyle } from 'contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
@@ -19,17 +20,23 @@ export const Container = styled.div`
 `;
 export const AudioPlayer = styled.audio``;
 
-export const PlayPauseButton = styled.button`${({ theme }) => css`
-  background: ${theme.colors.primaryColor};
+export const PlayPauseButton = styled.button<MoodStyle>`${({
+  theme,
+  mood,
+}) => css`
+  background: ${theme.colors[mood].primaryColor};
   border: none;
   height: 55px;
   width: 55px;
   font-size: 32px;
-  color: ${theme.colors.secondaryColor};
+  color: ${theme.colors[mood].innerColor};
   background: #17b24e;
 `}`;
 
-export const ForwardBackwardButton = styled.button`${({ theme }) => css`
+export const ForwardBackwardButton = styled.button<MoodStyle>`${({
+  theme,
+  mood,
+}) => css`
   background: none;
   border: none;
   display: flex;
@@ -38,9 +45,10 @@ export const ForwardBackwardButton = styled.button`${({ theme }) => css`
   font-size: 26px;
   height: 45px;
   width: 45px;
-  background: #202227;
+  background: ${theme.colors[mood].secondaryColor};
+  color:  ${theme.colors[mood].innerColor};
 
   &:hover {
-    color:  ${theme.colors.primaryColor};
+    color:  ${theme.colors[mood].primaryColor};
   }
 `}`;

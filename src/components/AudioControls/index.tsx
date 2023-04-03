@@ -8,6 +8,7 @@ import {
   BsFillPauseFill,
 } from 'react-icons/bs';
 import { ActiveTrackContext } from 'contexts/ActiveTrackProvider/context';
+import { MoodContext } from 'contexts/MoodProvider/context';
 
 const AudioControls = () => {
   const { isPlaying, togglePlaying, audioPlayerRef } =
@@ -15,6 +16,7 @@ const AudioControls = () => {
   const {
     activeTrack: { audioSrc },
   } = useContext(ActiveTrackContext);
+  const { mood } = useContext(MoodContext);
 
   return (
     <Styled.Container>
@@ -23,13 +25,13 @@ const AudioControls = () => {
         src={audioSrc}
         preload="metadata"
       />
-      <Styled.ForwardBackwardButton>
+      <Styled.ForwardBackwardButton mood={mood}>
         <BsArrowLeftShort />
       </Styled.ForwardBackwardButton>
-      <Styled.PlayPauseButton onClick={togglePlaying}>
+      <Styled.PlayPauseButton mood={mood} onClick={togglePlaying}>
         {isPlaying ? <BsFillPauseFill /> : <BsFillPlayFill />}
       </Styled.PlayPauseButton>
-      <Styled.ForwardBackwardButton>
+      <Styled.ForwardBackwardButton mood={mood}>
         <BsArrowRightShort />
       </Styled.ForwardBackwardButton>
     </Styled.Container>
