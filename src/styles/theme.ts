@@ -3,10 +3,14 @@ import { Mood } from 'contexts/MoodProvider/types';
 export const theme = {
   colors: {
     [Mood.ABDUCT_ME]: {
-      primaryColor: '#17b24e',
-      secondaryColor: '#212121',
-      shadowOne: '#1b1a1a',
-      shadowTwo: '#2b2b2b',
+      primary: {
+        color: '#17b24e',
+        shadowTwo: '#2b2b2b',
+        shadowOne: '#1b1a1a',
+      },
+      secondary: {
+        color: '#212121',
+      },
       innerColor: '#FFFFFF',
       gray: '#D3D3D3',
     },
