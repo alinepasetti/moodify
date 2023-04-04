@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div<MoodStyle>`
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,5 +20,6 @@ export const Container = styled.div<MoodStyle>`
 
   ${Image} {
     width: 90%;
+    max-height: 40vh;
   }
 `;

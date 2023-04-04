@@ -4,11 +4,14 @@ export const theme = {
   colors: {
     [Mood.ABDUCT_ME]: {
       primaryColor: '#17b24e',
-      secondaryColor: '#191414',
+      secondaryColor: '#212121',
+      shadowOne: '#1b1a1a',
+      shadowTwo: '#2b2b2b',
       innerColor: '#FFFFFF',
       gray: '#D3D3D3',
     },
     white: '#FFFFFF',
+    black: '#000000',
   },
   font: {
     family: {
