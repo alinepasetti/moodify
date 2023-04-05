@@ -3,7 +3,7 @@ import { RequestStatus } from 'hooks/useFetch';
 export type Track = {
   id: string;
   name: string;
-  artist: string[];
+  artists: string[];
   album: string;
   imgUrl: string;
   audioSrc: string;

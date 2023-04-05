@@ -1,7 +1,7 @@
-import ProgressBar from 'components/ProgressBar';
 import * as Styled from './styles';
 import { memo } from 'react';
-import AudioControls from 'components/AudioControls';
+import ProgressBar from '../ProgressBar';
+import AudioControls from '../AudioControls';
 import { CurrentTimeProvider } from '../../contexts/CurrentTimeProvider';
 
 const Player = () => {

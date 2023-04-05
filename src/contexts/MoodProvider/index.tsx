@@ -1,4 +1,4 @@
-import { useMood } from 'hooks/useMood';
+import { useMood } from '../../hooks/useMood';
 import { MoodContext } from './context';
 
 export type MoodProviderProps = {

@@ -1,4 +1,4 @@
-import useActiveTrack from 'hooks/useActiveTrack';
+import useActiveTrack from '../../hooks/useActiveTrack';
 import { ActiveTrackContext } from './context';
 
 export type ActiveTrackProviderProps = {

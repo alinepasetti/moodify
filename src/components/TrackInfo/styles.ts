@@ -1,5 +1,5 @@
-import { Title } from 'components/Heading/styles';
-import { Paragraph } from 'components/Text/styles';
+import { Title } from '../Heading/styles';
+import { Paragraph } from '../Text/styles';
 import styled from 'styled-components';
 
 export const Container = styled.div`

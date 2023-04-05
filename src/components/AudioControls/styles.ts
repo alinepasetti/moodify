@@ -1,4 +1,4 @@
-import { MoodStyle } from 'contexts/MoodProvider/types';
+import { MoodStyle } from '../../contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
 type ButtonStyle = MoodStyle & {

@@ -5,7 +5,7 @@ import AlbumImage from '../AlbumImage';
 import Text from '../Text';
 import Player from '../Player';
 import TrackInfo from '../TrackInfo';
-import { MoodContext } from 'contexts/MoodProvider/context';
+import { MoodContext } from '../../contexts/MoodProvider/context';
 
 const TrackDetail = () => {
   const {

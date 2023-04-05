@@ -1,4 +1,4 @@
-import { useCurrentTime } from 'hooks/useCurrentTime';
+import { useCurrentTime } from '../../hooks/useCurrentTime';
 import { CurrentTimeContext } from './context';
 
 export type CurrentTimeProviderProps = {

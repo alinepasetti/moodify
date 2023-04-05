@@ -18,7 +18,7 @@ const useActiveTrack = (id: string) => {
   const getMockData = useCallback(async () => {
     console.log('useActiveTrack > getMock data callback > delay');
 
-    await delay(4000);
+    await delay(0);
     const activeTrack = parseSpotifyResponse(data);
     setActiveTrack(activeTrack);
     setRequestStatus(RequestStatus.SUCCESS);

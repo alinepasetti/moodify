@@ -1,4 +1,3 @@
-import { CurrentTimeContext } from 'contexts/CurrentTimeProvider/context';
 import * as Styled from './styles';
 import { memo, useContext } from 'react';
 import {
@@ -7,9 +6,10 @@ import {
   BsFillPlayFill,
   BsFillPauseFill,
 } from 'react-icons/bs';
-import { ActiveTrackContext } from 'contexts/ActiveTrackProvider/context';
-import { MoodContext } from 'contexts/MoodProvider/context';
-import { useButtonStatus } from 'hooks/useButtonStatus';
+import { CurrentTimeContext } from '../../contexts/CurrentTimeProvider/context';
+import { ActiveTrackContext } from '../../contexts/ActiveTrackProvider/context';
+import { MoodContext } from '../../contexts/MoodProvider/context';
+import { useButtonStatus } from '../../hooks/useButtonStatus';
 
 const AudioControls = () => {
   const { isPlaying, togglePlaying, audioPlayerRef } =

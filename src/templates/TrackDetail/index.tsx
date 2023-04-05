@@ -1,7 +1,7 @@
-import { ActiveTrackContext } from '../../contexts/ActiveTrackProvider/context';
 import { useContext, lazy, Suspense } from 'react';
-import { MoodContext } from 'contexts/MoodProvider/context';
 import * as Styled from './styles';
+import { ActiveTrackContext } from '../../contexts/ActiveTrackProvider/context';
+import { MoodContext } from '../../contexts/MoodProvider/context';
 import { RequestStatus } from '../../hooks/useFetch';
 import Heading from '../../components/Heading';
 const Track = lazy(() => import('../../components/TrackDetail'));

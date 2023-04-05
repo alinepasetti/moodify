@@ -1,4 +1,4 @@
-import { Mood } from 'contexts/MoodProvider/types';
+import { Mood } from '../contexts/MoodProvider/types';
 
 export const theme = {
   colors: {
