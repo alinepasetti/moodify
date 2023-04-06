@@ -17,6 +17,8 @@ export const theme = {
         colorDark: '#1b1a1a',
         shadowLight: '#2b2b2b',
         shadowDark: '#1b1a1a',
+        darkest: '#000000',
+        lightest: '#646464',
       },
       innerColor: '#FFFFFF',
     },

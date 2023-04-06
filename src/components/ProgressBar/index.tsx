@@ -10,13 +10,10 @@ const ProgressBar = () => {
   const { mood } = useContext(MoodContext);
   return (
     <Styled.Container>
-      <Styled.Input
-        mood={mood}
-        type="range"
-        className="progressBar"
-        defaultValue="0"
-        ref={progressBarRef}
-      ></Styled.Input>
+      <Styled.Input mood={mood} ref={progressBarRef}>
+        <Styled.SliderThumb mood={mood} />
+        <Styled.Fill mood={mood} />
+      </Styled.Input>
       <div>
         <Text>{currentTime}</Text>
         <Text>{duration}</Text>

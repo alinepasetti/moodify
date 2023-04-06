@@ -1,8 +1,8 @@
 import { Image } from '../AlbumImage/styles';
 import { MoodStyle } from '../../contexts/MoodProvider/types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div<MoodStyle>`
+export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
   height: 100vh;
   width: 100%;
   display: flex;
@@ -19,7 +19,13 @@ export const Container = styled.div<MoodStyle>`
   }
 
   ${Image} {
-    width: 90%;
+    margin-top: 7%;
+    width: 75%;
     max-height: 40vh;
+    border: solid 10px ${theme.colors[mood].secondary.colorLight};
+    border-radius: 25px;
+    box-shadow: 7px 7px 15px ${
+      theme.colors[mood].secondary.shadowDark
+    }, -7px -7px 15px ${theme.colors[mood].secondary.shadowLight};
   }
-`;
+`}`;
