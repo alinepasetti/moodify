@@ -60,7 +60,7 @@ export const SliderThumb = styled.span<MoodStyle>`${({ theme, mood }) => css`
   position: absolute;
   cursor: pointer;
   position: relative;
-  margin: -2px 0 0 0;
+  margin: -2px 0 0 -2px;
   z-index: 3;
   box-shadow: 6px 6px 10px ${theme.colors[mood].secondary.shadowDark}, -6px -6px 10px ${theme.colors[mood].secondary.shadowLight};
 

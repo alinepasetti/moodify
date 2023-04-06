@@ -1,6 +1,7 @@
 import { Image } from '../AlbumImage/styles';
 import { MoodStyle } from '../../contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
+import { Paragraph } from 'components/Text/styles';
 
 export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
   height: 100vh;
@@ -16,6 +17,9 @@ export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  & > div > ${Paragraph} {
+    font-size: 1.2rem;
   }
 
   ${Image} {

@@ -1,12 +1,13 @@
 import { MoodStyle } from 'contexts/MoodProvider/types';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div<MoodStyle>`
-  background: ${({ theme, mood }) => theme.colors[mood].background};
+export const Wrapper = styled.div<MoodStyle>`${({ theme, mood }) => css`
+  background: ${theme.colors[mood].background};
+  box-shadow: inset 15px 15px 25px ${theme.colors[mood].secondary.shadowDark}, inset -15px -15px 25px ${theme.colors[mood].secondary.shadowLight};
   display: flex;
   width: 100%;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
+`}`;
