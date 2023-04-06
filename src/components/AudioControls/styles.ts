@@ -37,15 +37,15 @@ export const PlayPauseButton = styled.button<ButtonStyle>`${({
   font-size: 32px;
   color: ${theme.colors[mood].innerColor};
   border: solid 3px ${theme.colors[mood].logo};
-  box-shadow: 5px 5px 9.6px ${
+  box-shadow: 7px 7px 15px ${
     theme.colors[mood].secondary.shadowDark
-  }, -5px -5px 9.6px ${
+  }, -7px -7px 15px ${
   theme.colors[mood].secondary.shadowLight
 }, inset 6px 6px 15px ${
   theme.colors[mood].primary.shadowDark
 }, inset -6px -6px 15px ${theme.colors[mood].primary.shadowLight};
 
-  background: linear-gradient(180deg, ${
+  background: linear-gradient(145deg, ${
     theme.colors[mood].primary.colorDark
   } 0%, ${theme.colors[mood].primary.colorLight} 100%);
 
@@ -81,11 +81,11 @@ export const ForwardBackwardButton = styled.button<ButtonStyle>`${({
   color: ${theme.colors[mood].innerColor};
   border: solid 1.5px ${theme.colors[mood].secondary.colorDark};
 
-  box-shadow: 3px 3px 9.6px ${
+  box-shadow: 5px 5px 15px ${
     theme.colors[mood].secondary.shadowDark
-  }, -3px -3px 9.6px ${theme.colors[mood].secondary.shadowLight};
+  }, -5px -5px 15px ${theme.colors[mood].secondary.shadowLight};
 
-  background: linear-gradient(180deg,${theme.colors[mood].secondary.colorDark}
+  background: linear-gradient(145deg,${theme.colors[mood].secondary.colorDark}
    0%, ${theme.colors[mood].secondary.colorLight} 100%);
 
   transition: color 200ms ease, transform 200ms ease;

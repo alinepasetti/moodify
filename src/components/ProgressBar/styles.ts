@@ -2,7 +2,7 @@ import { Paragraph } from '../Text/styles';
 import { MoodStyle } from '../../contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<MoodStyle>`
   width: 100%;
   padding: 5%;
   display: flex;
@@ -18,7 +18,7 @@ export const Container = styled.div`
   ${Paragraph} {
     font-size: 1.2rem;
     margin: 0px;
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme, mood }) => theme.colors[mood].text};
   }
 `;
 
@@ -37,18 +37,6 @@ export const Input = styled.div<MoodStyle>`${({ theme, mood }) => css`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &::-ms-track {
-    background: transparent;
-    border-color: transparent;
-    border-width: 6px 0;
-    color: transparent;
-  }
-
-  &::-ms-fill-lower {
-    background: ${theme.colors.white};
-    border-radius: 10px;
-  }
 `}`;
 
 export const SliderThumb = styled.span<MoodStyle>`${({ theme, mood }) => css`
@@ -62,6 +50,7 @@ export const SliderThumb = styled.span<MoodStyle>`${({ theme, mood }) => css`
   position: relative;
   margin: -2px 0 0 -2px;
   z-index: 3;
+  border: solid 0.3px ${theme.colors[mood].secondary.colorDark};
   box-shadow: 6px 6px 10px ${theme.colors[mood].secondary.shadowDark}, -6px -6px 10px ${theme.colors[mood].secondary.shadowLight};
 
   display: flex;

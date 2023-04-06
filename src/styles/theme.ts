@@ -22,6 +22,26 @@ export const theme = {
       },
       innerColor: '#FFFFFF',
     },
+    [Mood.MIND_THE_GAP]: {
+      logo: '#B87EFB',
+      background: '#E4EBF5',
+      text: '#3fa256',
+      primary: {
+        colorLight: '#D491FF',
+        colorDark: '#9C6BD5',
+        shadowLight: '#C989FF',
+        shadowDark: '#A773E4',
+      },
+      secondary: {
+        colorLight: '#FFFFFF',
+        colorDark: '#C2C8D0',
+        shadowLight: '#F9FFFF',
+        shadowDark: '#CFD6DF',
+        darkest: '#adadad',
+        lightest: '#FFFFFF',
+      },
+      innerColor: '#410A3B',
+    },
     white: '#FFFFFF',
   },
   font: {

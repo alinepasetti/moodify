@@ -10,7 +10,7 @@ export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  color: ${({ theme }) => theme.colors.white};
+  color: ${theme.colors[mood].text};
 
   &> div {
     width: 100%;
@@ -28,8 +28,6 @@ export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
     max-height: 40vh;
     border: solid 10px ${theme.colors[mood].secondary.colorLight};
     border-radius: 25px;
-    box-shadow: 7px 7px 15px ${
-      theme.colors[mood].secondary.shadowDark
-    }, -7px -7px 15px ${theme.colors[mood].secondary.shadowLight};
+    box-shadow: 7px 7px 15px ${theme.colors[mood].secondary.shadowDark}, -7px -7px 15px ${theme.colors[mood].secondary.shadowLight};
   }
 `}`;
