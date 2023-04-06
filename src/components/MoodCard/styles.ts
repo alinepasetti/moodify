@@ -13,7 +13,7 @@ export const Container = styled.div`${({ theme }) => css`
   background-color: ${theme.colors.white};
 
   ${Paragraph} {
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
     margin: 0;
     text-align: center;
   }

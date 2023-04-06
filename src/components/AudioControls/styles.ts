@@ -5,26 +5,6 @@ type ButtonStyle = MoodStyle & {
   active: boolean;
 };
 
-const forwardBackwardButtonActive = (active: boolean, theme, mood) => {
-  if (active) {
-    return css`
-      color:  ${theme.colors[mood].primary.colorOne};
-      box-shadow: inset 3px 3px 15px  ${theme.colors[mood].secondary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowTwo};
-      transform: scale(0.98);
-      background: linear-gradient(180deg,  ${theme.colors[mood].secondary.shadowOne} 0%, ${theme.colors[mood].secondary.shadowTwo} 100%);
-    `;
-  }
-};
-const playButtonActive = (active: boolean, theme, mood) => {
-  if (active) {
-    return css`
-      /* box-shadow: inset 3px 3px 15px  ${theme.colors[mood].secondary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowTwo}; */
-      transform: scale(0.98);
-      background: linear-gradient(145deg, #11863B, #1DDF62);
-    `;
-  }
-};
-
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -51,19 +31,36 @@ export const PlayPauseButton = styled.button<ButtonStyle>`${({
   mood,
   active,
 }) => css`
-  background: ${theme.colors[mood].primary.colorOne};
   border: none;
   height: 55px;
   width: 55px;
   font-size: 32px;
   color: ${theme.colors[mood].innerColor};
-  background: linear-gradient(145deg, #1DDE61, #11863B);
-  box-shadow: 3px 3px 5px ${
-    theme.colors[mood].secondary.shadowOne
-  }, -3px -3px 5px ${
-  theme.colors[mood].secondary.shadowTwo
-}, inset 9.91px 9.91px 15px #139240, inset -9.91px -9.91px 15px #1BD25C;
-  ${playButtonActive(active, theme, mood)}
+
+  box-shadow: 5px 5px 9.6px ${
+    theme.colors[mood].secondary.shadowDark
+  }, -5px -5px 9.6px ${theme.colors[mood].secondary.shadowLight};
+
+  background: linear-gradient(180deg, ${
+    theme.colors[mood].primary.colorDark
+  } 0%, ${theme.colors[mood].primary.colorLight} 100%);
+
+  transition: transform 200ms ease;
+
+  &:active {
+    transform: scale(0.98);
+    box-shadow: inset 3.2px 3.2px 15px ${
+      theme.colors[mood].primary.shadowDark
+    }, inset -3.2px -3.2px 15px ${theme.colors[mood].primary.shadowLight};
+  }
+
+  ${
+    active &&
+    css`
+      transform: scale(0.98);
+      box-shadow: inset 3.2px 3.2px 15px ${theme.colors[mood].primary.shadowDark}, inset -3.2px -3.2px 15px ${theme.colors[mood].primary.shadowLight};
+    `
+  }
 `}`;
 
 export const ForwardBackwardButton = styled.button<ButtonStyle>`${({
@@ -71,41 +68,37 @@ export const ForwardBackwardButton = styled.button<ButtonStyle>`${({
   mood,
   active,
 }) => css`
-  background: none;
   border: none;
+  width: 45px;
+  height: 45px;
+  font-size: 26px;
   display: flex;
   align-items: center;
-  font-family: monospace;
-  font-size: 26px;
-  height: 45px;
-  width: 45px;
-  color:  ${theme.colors[mood].innerColor};
-  border: none;
-  box-shadow: 3px 3px 5px ${
-    theme.colors[mood].secondary.shadowOne
-  }, -3px -3px 5px ${theme.colors[mood].secondary.shadowTwo};
-  background: linear-gradient(160deg, ${
-    theme.colors[mood].secondary.shadowOne
-  } 0%, ${theme.colors[mood].secondary.shadowTwo} 100%);
+  color: ${theme.colors[mood].innerColor};
+
+  box-shadow: 3px 3px 9.6px ${
+    theme.colors[mood].secondary.shadowDark
+  }, -3px -3px 9.6px ${theme.colors[mood].secondary.shadowLight};
+
+  background: linear-gradient(180deg,${theme.colors[mood].secondary.colorDark}
+   0%, ${theme.colors[mood].secondary.colorLight} 100%);
+
+  transition: color 200ms ease, transform 200ms ease;
 
   &:active {
-    color:  ${theme.colors[mood].primary.colorOne};
-    box-shadow: inset 3px 3px 15px  ${
-      theme.colors[mood].secondary.shadowOne
-    }, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowTwo};
+    color:  ${theme.colors[mood].logo};
     transform: scale(0.98);
-    background: linear-gradient(180deg,  ${
-      theme.colors[mood].secondary.shadowOne
-    } 0%, ${theme.colors[mood].secondary.shadowTwo} 100%);
+    box-shadow: inset 3.2px 3.2px 15px ${
+      theme.colors[mood].secondary.shadowDark
+    }, inset -3.2px -3.2px 15px ${theme.colors[mood].secondary.shadowLight};
   }
-  /* background: linear-gradient(145deg, #1BD35D, #13913F);
-  border-radius: 100%;
-  box-shadow: 9.91px 9.91px 15px #15A247, -9.91px -9.91px 15px #19C255;
 
-  background: linear-gradient(145deg, #BDBF3A, #FFFF54);
-  border-radius: 100%;
-  box-shadow: inset 9.91px 9.91px 15px #D3D641, inset -9.91px -9.91px 15px #FDFF4D; */
-
-  ${forwardBackwardButtonActive(active, theme, mood)}
-
+  ${
+    active &&
+    css`
+      color: ${theme.colors[mood].logo};
+      transform: scale(0.98);
+      box-shadow: inset 3.2px 3.2px 15px ${theme.colors[mood].secondary.shadowDark}, inset -3.2px -3.2px 15px ${theme.colors[mood].secondary.shadowLight};
+    `
+  }
 `}`;

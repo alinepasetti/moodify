@@ -2,7 +2,7 @@ import { MoodStyle } from 'contexts/MoodProvider/types';
 import styled from 'styled-components';
 
 export const Container = styled.div<MoodStyle>`
-  background: ${({ theme, mood }) => theme.colors[mood].secondary.colorOne};
+  background: ${({ theme, mood }) => theme.colors[mood].background};
   display: flex;
   width: 100%;
   height: 100vh;

@@ -26,8 +26,8 @@ export const Input = styled.input<MoodStyle>`${({ theme, mood }) => css`
   width: 100%;
 
   appearance: none;
-  background: linear-gradient(180deg,  ${theme.colors[mood].primary.shadowOne} 0%, ${theme.colors[mood].primary.shadowTwo} 100%);
-  box-shadow: inset 3px 3px 15px  ${theme.colors[mood].primary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].primary.shadowTwo};
+  background: linear-gradient(180deg,  ${theme.colors[mood].secondary.shadowDark} 0%, ${theme.colors[mood].secondary.shadowLight} 100%);
+  box-shadow: inset 3px 3px 15px  ${theme.colors[mood].secondary.shadowDark}, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowLight};
   border-radius: 10px;
   height: 11px;
   outline: none;
@@ -35,8 +35,8 @@ export const Input = styled.input<MoodStyle>`${({ theme, mood }) => css`
     &::before {
     content: "";
     height: 11px;
-    width: ${theme.colors[mood].primary.colorOne};
-    background-color: ${theme.colors[mood].primary.colorOne};
+    width: ${theme.colors[mood].logo};
+    background-color: ${theme.colors[mood].logo};
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: absolute;
@@ -52,7 +52,7 @@ export const Input = styled.input<MoodStyle>`${({ theme, mood }) => css`
     width: 15px;
     border-radius: 50%;
     border: none;
-    background-color: ${theme.colors[mood].primary.colorOne};
+    background-color: ${theme.colors[mood].logo};
     cursor: pointer;
     position: relative;
     margin: -2px 0 0 0;

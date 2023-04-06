@@ -4,24 +4,23 @@ export const theme = {
   colors: {
     [Mood.ABDUCT_ME]: {
       logo: '#17b24e',
+      background: '#212121',
       text: '#FFFFFF',
       primary: {
-        colorOne: '#17b24e',
-        colorTwo: '#17b24e',
-        shadowTwo: '#2b2b2b',
-        shadowOne: '#1b1a1a',
+        colorLight: '#1BD35D',
+        colorDark: '#13913F',
+        shadowLight: '#1BD25C',
+        shadowDark: '#139240',
       },
       secondary: {
-        colorOne: '#212121',
-        colorTwo: '#17b24e',
-        shadowTwo: '#2b2b2b',
-        shadowOne: '#1b1a1a',
+        colorLight: '#2b2b2b',
+        colorDark: '#1b1a1a',
+        shadowLight: '#2b2b2b',
+        shadowDark: '#1b1a1a',
       },
       innerColor: '#FFFFFF',
-      gray: '#D3D3D3',
     },
     white: '#FFFFFF',
-    black: '#000000',
   },
   font: {
     family: {
