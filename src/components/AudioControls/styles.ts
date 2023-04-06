@@ -8,17 +8,17 @@ type ButtonStyle = MoodStyle & {
 const forwardBackwardButtonActive = (active: boolean, theme, mood) => {
   if (active) {
     return css`
-      color:  ${theme.colors[mood].primary.color};
-      box-shadow: inset 3px 3px 15px  ${theme.colors[mood].primary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].primary.shadowTwo};
+      color:  ${theme.colors[mood].primary.colorOne};
+      box-shadow: inset 3px 3px 15px  ${theme.colors[mood].secondary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowTwo};
       transform: scale(0.98);
-      background: linear-gradient(180deg,  ${theme.colors[mood].primary.shadowOne} 0%, ${theme.colors[mood].primary.shadowTwo} 100%);
+      background: linear-gradient(180deg,  ${theme.colors[mood].secondary.shadowOne} 0%, ${theme.colors[mood].secondary.shadowTwo} 100%);
     `;
   }
 };
 const playButtonActive = (active: boolean, theme, mood) => {
   if (active) {
     return css`
-      /* box-shadow: inset 3px 3px 15px  ${theme.colors[mood].primary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].primary.shadowTwo}; */
+      /* box-shadow: inset 3px 3px 15px  ${theme.colors[mood].secondary.shadowOne}, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowTwo}; */
       transform: scale(0.98);
       background: linear-gradient(145deg, #11863B, #1DDF62);
     `;
@@ -51,7 +51,7 @@ export const PlayPauseButton = styled.button<ButtonStyle>`${({
   mood,
   active,
 }) => css`
-  background: ${theme.colors[mood].primary.color};
+  background: ${theme.colors[mood].primary.colorOne};
   border: none;
   height: 55px;
   width: 55px;
@@ -59,9 +59,9 @@ export const PlayPauseButton = styled.button<ButtonStyle>`${({
   color: ${theme.colors[mood].innerColor};
   background: linear-gradient(145deg, #1DDE61, #11863B);
   box-shadow: 3px 3px 5px ${
-    theme.colors[mood].primary.shadowOne
+    theme.colors[mood].secondary.shadowOne
   }, -3px -3px 5px ${
-  theme.colors[mood].primary.shadowTwo
+  theme.colors[mood].secondary.shadowTwo
 }, inset 9.91px 9.91px 15px #139240, inset -9.91px -9.91px 15px #1BD25C;
   ${playButtonActive(active, theme, mood)}
 `}`;
@@ -82,22 +82,29 @@ export const ForwardBackwardButton = styled.button<ButtonStyle>`${({
   color:  ${theme.colors[mood].innerColor};
   border: none;
   box-shadow: 3px 3px 5px ${
-    theme.colors[mood].primary.shadowOne
-  }, -3px -3px 5px ${theme.colors[mood].primary.shadowTwo};
+    theme.colors[mood].secondary.shadowOne
+  }, -3px -3px 5px ${theme.colors[mood].secondary.shadowTwo};
   background: linear-gradient(160deg, ${
-    theme.colors[mood].primary.shadowOne
-  } 0%, ${theme.colors[mood].primary.shadowTwo} 100%);
+    theme.colors[mood].secondary.shadowOne
+  } 0%, ${theme.colors[mood].secondary.shadowTwo} 100%);
 
   &:active {
-    color:  ${theme.colors[mood].primary.color};
+    color:  ${theme.colors[mood].primary.colorOne};
     box-shadow: inset 3px 3px 15px  ${
-      theme.colors[mood].primary.shadowOne
-    }, inset -3px -3px 15px ${theme.colors[mood].primary.shadowTwo};
+      theme.colors[mood].secondary.shadowOne
+    }, inset -3px -3px 15px ${theme.colors[mood].secondary.shadowTwo};
     transform: scale(0.98);
     background: linear-gradient(180deg,  ${
-      theme.colors[mood].primary.shadowOne
-    } 0%, ${theme.colors[mood].primary.shadowTwo} 100%);
+      theme.colors[mood].secondary.shadowOne
+    } 0%, ${theme.colors[mood].secondary.shadowTwo} 100%);
   }
+  /* background: linear-gradient(145deg, #1BD35D, #13913F);
+  border-radius: 100%;
+  box-shadow: 9.91px 9.91px 15px #15A247, -9.91px -9.91px 15px #19C255;
+
+  background: linear-gradient(145deg, #BDBF3A, #FFFF54);
+  border-radius: 100%;
+  box-shadow: inset 9.91px 9.91px 15px #D3D641, inset -9.91px -9.91px 15px #FDFF4D; */
 
   ${forwardBackwardButtonActive(active, theme, mood)}
 

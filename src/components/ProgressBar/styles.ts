@@ -35,8 +35,8 @@ export const Input = styled.input<MoodStyle>`${({ theme, mood }) => css`
     &::before {
     content: "";
     height: 11px;
-    width: ${theme.colors[mood].primary.color};
-    background-color: ${theme.colors[mood].primary.color};
+    width: ${theme.colors[mood].primary.colorOne};
+    background-color: ${theme.colors[mood].primary.colorOne};
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     position: absolute;
@@ -52,7 +52,7 @@ export const Input = styled.input<MoodStyle>`${({ theme, mood }) => css`
     width: 15px;
     border-radius: 50%;
     border: none;
-    background-color: ${theme.colors[mood].primary.color};
+    background-color: ${theme.colors[mood].primary.colorOne};
     cursor: pointer;
     position: relative;
     margin: -2px 0 0 0;
