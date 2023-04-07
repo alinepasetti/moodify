@@ -10,10 +10,14 @@ type MoodCardProps = {
 };
 
 const MoodCard = ({ mood }: MoodCardProps) => {
-  const { setMood } = useContext(MoodContext);
+  const { setMood, mood: currentMood } = useContext(MoodContext);
   return (
     <Link href="tracks/id">
-      <Styled.Container onClick={() => setMood(mood.type)}>
+      <Styled.Container
+        mood={currentMood}
+        cardMood={mood.type}
+        onClick={() => setMood(mood.type)}
+      >
         <Styled.Icon src={`./assets/mood-icons/${mood.icon}`} />
         <Text>{mood.title}</Text>
       </Styled.Container>
