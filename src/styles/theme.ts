@@ -42,6 +42,26 @@ export const theme = {
       },
       innerColor: '#410A3B',
     },
+    [Mood.RELAX_AND_COME]: {
+      logo: '#410A3B',
+      background: '#E34747',
+      text: '#FFFFFF',
+      primary: {
+        colorLight: '#4B0C44',
+        colorDark: '#370932',
+        shadowLight: '#4f0c48',
+        shadowDark: '#31072d',
+      },
+      secondary: {
+        colorLight: '#C13C3C',
+        colorDark: '#FF5252',
+        shadowLight: '#f75959',
+        shadowDark: '#c03030',
+        darkest: '#adadad',
+        lightest: '#FFFFFF',
+      },
+      innerColor: '#FFFFFF',
+    },
     white: '#FFFFFF',
   },
   font: {
