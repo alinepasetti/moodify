@@ -32,6 +32,7 @@ export const Container = styled.div<CardStyle>`${({
   theme.colors[cardMood].secondary.shadowDark
 }, inset -6px -6px 15px ${theme.colors[cardMood].secondary.shadowLight};
   border-radius: 25px;
+  border: solid 3px ${theme.colors[cardMood].background};
 
   ${
     active &&

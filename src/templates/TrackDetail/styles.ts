@@ -1,3 +1,4 @@
+import { Title } from 'components/Heading/styles';
 import { MoodStyle } from 'contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
@@ -10,4 +11,8 @@ export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &> ${Title} {
+    color: ${theme.colors[mood].text};
+  }
 `}`;
