@@ -10,9 +10,11 @@ const Moods = () => {
   return (
     <Styled.Container mood={mood}>
       <Heading>Select your mood:</Heading>
-      {moods.map((mood) => (
-        <MoodCard mood={mood} key={mood.type} />
-      ))}
+      <div>
+        {moods.map((mood) => (
+          <MoodCard mood={mood} key={mood.type} />
+        ))}
+      </div>
     </Styled.Container>
   );
 };

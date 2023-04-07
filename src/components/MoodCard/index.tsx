@@ -4,6 +4,7 @@ import { MoodDetail } from '../../contexts/MoodProvider/types';
 import { memo, useContext } from 'react';
 import Link from 'next/link';
 import { MoodContext } from 'contexts/MoodProvider/context';
+import { useButtonStatus } from 'hooks/useButtonStatus';
 
 type MoodCardProps = {
   mood: MoodDetail;
@@ -11,12 +12,16 @@ type MoodCardProps = {
 
 const MoodCard = ({ mood }: MoodCardProps) => {
   const { setMood, mood: currentMood } = useContext(MoodContext);
+  const { active, activateButton } = useButtonStatus();
   return (
     <Link href="tracks/id">
       <Styled.Container
         mood={currentMood}
         cardMood={mood.type}
+        active={active}
         onClick={() => setMood(mood.type)}
+        onTouchStart={() => activateButton(true)}
+        onTouchEnd={() => activateButton(false)}
       >
         <Styled.Icon src={`./assets/mood-icons/${mood.icon}`} />
         <Text>{mood.title}</Text>
