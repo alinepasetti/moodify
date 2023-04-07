@@ -15,6 +15,6 @@ const renderProgressBarElement = () =>
 describe('<ProgressBar />', () => {
   it('should render a progress bar', () => {
     renderTheme(renderProgressBarElement());
-    expect(screen.getByRole('slider')).toBeInTheDocument();
+    expect(screen.queryByRole('slider')).toBeInTheDocument();
   });
 });

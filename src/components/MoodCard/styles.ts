@@ -1,5 +1,5 @@
-import { Paragraph } from 'components/Text/styles';
-import { Mood, MoodStyle } from 'contexts/MoodProvider/types';
+import { Paragraph } from '../Text/styles';
+import { Mood, MoodStyle } from '../../contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
 type CardStyle = MoodStyle & {

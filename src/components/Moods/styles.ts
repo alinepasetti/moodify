@@ -1,5 +1,5 @@
-import { Title } from 'components/Heading/styles';
-import { MoodStyle } from 'contexts/MoodProvider/types';
+import { Title } from '../Heading/styles';
+import { MoodStyle } from '../../contexts/MoodProvider/types';
 import styled from 'styled-components';
 
 export const Container = styled.div<MoodStyle>`

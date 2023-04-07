@@ -3,8 +3,8 @@ import Text from '../Text';
 import { MoodDetail } from '../../contexts/MoodProvider/types';
 import { memo, useContext } from 'react';
 import Link from 'next/link';
-import { MoodContext } from 'contexts/MoodProvider/context';
-import { useButtonStatus } from 'hooks/useButtonStatus';
+import { MoodContext } from '../../contexts/MoodProvider/context';
+import { useButtonStatus } from '../../hooks/useButtonStatus';
 
 type MoodCardProps = {
   mood: MoodDetail;
@@ -23,7 +23,10 @@ const MoodCard = ({ mood }: MoodCardProps) => {
         onTouchStart={() => activateButton(true)}
         onTouchEnd={() => activateButton(false)}
       >
-        <Styled.Icon src={`./assets/mood-icons/${mood.icon}`} />
+        <Styled.Icon
+          alt={mood.title}
+          src={`./assets/mood-icons/${mood.icon}`}
+        />
         <Text>{mood.title}</Text>
       </Styled.Container>
     </Link>

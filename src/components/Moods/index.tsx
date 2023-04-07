@@ -3,7 +3,7 @@ import { memo, useContext } from 'react';
 import MoodCard from '../MoodCard';
 import { moods } from '../../contexts/MoodProvider/types';
 import Heading from '../Heading';
-import { MoodContext } from 'contexts/MoodProvider/context';
+import { MoodContext } from '../../contexts/MoodProvider/context';
 
 const Moods = () => {
   const { mood } = useContext(MoodContext);
