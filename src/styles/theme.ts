@@ -62,6 +62,26 @@ export const theme = {
       },
       innerColor: '#FFFFFF',
     },
+    [Mood.PACHA_MAMA]: {
+      logo: '#85B44B',
+      background: '#CECA88',
+      text: '#FFFFFF',
+      primary: {
+        colorLight: '#99CF56',
+        colorDark: '#719940',
+        shadowLight: '#97c75c',
+        shadowDark: '#729b41',
+      },
+      secondary: {
+        colorLight: '#EDE89C',
+        colorDark: '#AFAC74',
+        shadowLight: '#e5e1a4',
+        shadowDark: '#b4b16e',
+        darkest: '#a4a060',
+        lightest: '#edeabf',
+      },
+      innerColor: '#3D3C3C',
+    },
     white: '#FFFFFF',
   },
   font: {
