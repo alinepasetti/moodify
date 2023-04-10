@@ -56,6 +56,7 @@ export const useCurrentTime = () => {
   }, []);
 
   useEffect(() => {
+    // workaround to solve useEffect not being triggered with the onloadedmetadata update
     const durationInterval = setInterval(() => {
       if (!isNaN(audioPlayerRef.current.duration)) {
         setDuration(audioPlayerRef.current.duration);
