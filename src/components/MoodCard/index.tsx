@@ -14,7 +14,7 @@ const MoodCard = ({ mood }: MoodCardProps) => {
   const { setMood, mood: currentMood } = useContext(MoodContext);
   const { active, activateButton } = useButtonStatus();
   return (
-    <Link href="tracks/id">
+    <Link href={`/tracks/${mood.trackId}`}>
       <Styled.Container
         mood={currentMood}
         cardMood={mood.type}

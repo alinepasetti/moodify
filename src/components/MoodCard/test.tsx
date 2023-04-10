@@ -7,7 +7,12 @@ import { createMoodProviderWrapper } from '../../mocks/mood';
 const renderMoodCardElement = () =>
   createMoodProviderWrapper(
     <MoodCard
-      mood={{ type: Mood.ABDUCT_ME, title: 'abduct me', icon: 'png' }}
+      mood={{
+        type: Mood.ABDUCT_ME,
+        title: 'abduct me',
+        icon: 'png',
+        trackId: '123',
+      }}
     />,
   );
 

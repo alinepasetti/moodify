@@ -7,7 +7,7 @@ export enum RequestStatus {
   ERROR,
 }
 
-export const useMock = true;
+export const useMock = false;
 const url = process.env.NEXT_PUBLIC_API;
 
 export const useFetch = (instanceName: string) => {
