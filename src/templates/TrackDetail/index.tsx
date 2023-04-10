@@ -4,6 +4,7 @@ import { ActiveTrackContext } from '../../contexts/ActiveTrackProvider/context';
 import { MoodContext } from '../../contexts/MoodProvider/context';
 import { RequestStatus } from '../../hooks/useFetch';
 import Heading from '../../components/Heading';
+import Head from 'next/head';
 const Track = lazy(async () => await import('../../components/TrackDetail'));
 
 function TrackDetail() {
@@ -21,9 +22,16 @@ function TrackDetail() {
         !activeTrack) && <Heading>LOADING...</Heading>}
 
       {requestStatus === RequestStatus.SUCCESS && (
-        <Suspense fallback={<Heading>LOADING...</Heading>}>
-          <Track />
-        </Suspense>
+        <>
+          <Head>
+            <title>
+              moodify - {activeTrack.name} - {activeTrack.artists[0]}
+            </title>
+          </Head>
+          <Suspense fallback={<Heading>LOADING...</Heading>}>
+            <Track />
+          </Suspense>
+        </>
       )}
     </Styled.Container>
   );
