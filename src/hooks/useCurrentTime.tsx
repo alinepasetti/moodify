@@ -56,7 +56,6 @@ export const useCurrentTime = () => {
   }, []);
 
   useEffect(() => {
-    console.log(audioPlayerRef.current.duration);
     const durationInterval = setInterval(() => {
       if (!isNaN(audioPlayerRef.current.duration)) {
         setDuration(audioPlayerRef.current.duration);

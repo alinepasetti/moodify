@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div<MoodStyle>`
   width: 95%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +14,7 @@ export const Container = styled.div<MoodStyle>`
 
   &> div {
     width: 100%;
-  padding: 1rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
