@@ -18,12 +18,12 @@ export const moods: MoodDetail[] = [
   },
   { type: Mood.MIND_THE_GAP, title: 'mind the gap', icon: 'mind-the-gap.png' },
   { type: Mood.PACHA_MAMA, title: 'pacha mama', icon: 'pacha-mama.png' },
-  {
-    type: Mood.GIRLS_WANNA_HAVE_FUN,
-    title: 'gurls wanna have fun',
-    icon: 'gurls-wanna-have-fun.png',
-  },
-  { type: Mood.VIBRANT_SPIRIT, title: 'vibrant spirit', icon: '' },
+  // {
+  //   type: Mood.GIRLS_WANNA_HAVE_FUN,
+  //   title: 'gurls wanna have fun',
+  //   icon: 'gurls-wanna-have-fun.png',
+  // },
+  // { type: Mood.VIBRANT_SPIRIT, title: 'vibrant spirit', icon: '' },
 ];
 
 export type MoodStyle = {

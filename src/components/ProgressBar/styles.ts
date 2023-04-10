@@ -2,6 +2,8 @@ import { Paragraph } from '../Text/styles';
 import { MoodStyle } from '../../contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
+type TrackProgress = { trackProgress: number };
+
 export const Container = styled.div<MoodStyle>`
   width: 100%;
   padding: 5%;
@@ -39,7 +41,11 @@ export const Input = styled.div<MoodStyle>`${({ theme, mood }) => css`
   align-items: center;
 `}`;
 
-export const SliderThumb = styled.span<MoodStyle>`${({ theme, mood }) => css`
+export const SliderThumb = styled.span<TrackProgress & MoodStyle>`${({
+  theme,
+  mood,
+  trackProgress,
+}) => css`
   height: 22px;
   width: 22px;
   border-radius: 50%;
@@ -47,11 +53,12 @@ export const SliderThumb = styled.span<MoodStyle>`${({ theme, mood }) => css`
   border: none;
   position: absolute;
   cursor: pointer;
-  position: relative;
+  left: 0;
+  left: ${trackProgress}%;
   margin: -2px 0 0 -2px;
   z-index: 3;
   border: solid 0.3px ${theme.colors[mood].secondary.colorDark};
-  box-shadow: 4px 4px 7px ${theme.colors[mood].secondary.shadowDark}, -6px -6px 10px ${theme.colors[mood].secondary.shadowLight};
+  box-shadow: 3px 3px 7px ${theme.colors[mood].secondary.shadowDark}, -3px -3px 7px ${theme.colors[mood].secondary.shadowLight};
 
   display: flex;
   justify-content: center;
@@ -72,9 +79,13 @@ export const SliderThumb = styled.span<MoodStyle>`${({ theme, mood }) => css`
   }
 `}`;
 
-export const Fill = styled.span<MoodStyle>`${({ theme, mood }) => css`
+export const Fill = styled.span<TrackProgress & MoodStyle>`${({
+  theme,
+  mood,
+  trackProgress,
+}) => css`
   height: 70%;
-  width: 50%;
+  width: ${trackProgress}%;
   position: absolute;
   left: 0;
   z-index: 2;

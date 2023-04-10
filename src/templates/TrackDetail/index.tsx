@@ -4,7 +4,7 @@ import { ActiveTrackContext } from '../../contexts/ActiveTrackProvider/context';
 import { MoodContext } from '../../contexts/MoodProvider/context';
 import { RequestStatus } from '../../hooks/useFetch';
 import Heading from '../../components/Heading';
-const Track = lazy(() => import('../../components/TrackDetail'));
+const Track = lazy(async () => await import('../../components/TrackDetail'));
 
 function TrackDetail() {
   const { requestStatus, activeTrack } = useContext(ActiveTrackContext);

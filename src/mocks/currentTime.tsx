@@ -6,14 +6,17 @@ export const buildCurrentTimeProviderValueMock = (
   isPlaying = false,
   duration = '2:30',
   currentTime = '0',
+  trackProgress = 0,
 ): CurrentTimeProps => {
   return {
     isPlaying,
     duration,
     currentTime,
+    trackProgress,
     togglePlaying: vi.fn(),
     audioPlayerRef: null,
     progressBarRef: null,
+    sliderThumbRef: null,
   };
 };
 

@@ -5,14 +5,24 @@ import { CurrentTimeContext } from '../../contexts/CurrentTimeProvider/context';
 import { MoodContext } from '../../contexts/MoodProvider/context';
 
 const ProgressBar = () => {
-  const { duration, currentTime, progressBarRef } =
-    useContext(CurrentTimeContext);
+  const {
+    duration,
+    currentTime,
+    progressBarRef,
+    sliderThumbRef,
+    trackProgress,
+  } = useContext(CurrentTimeContext);
   const { mood } = useContext(MoodContext);
+
   return (
     <Styled.Container mood={mood} role="slider">
       <Styled.Input mood={mood} ref={progressBarRef}>
-        <Styled.SliderThumb mood={mood} />
-        <Styled.Fill mood={mood} />
+        <Styled.SliderThumb
+          ref={sliderThumbRef}
+          mood={mood}
+          trackProgress={trackProgress}
+        />
+        <Styled.Fill mood={mood} trackProgress={trackProgress} />
       </Styled.Input>
       <div>
         <Text>{currentTime}</Text>

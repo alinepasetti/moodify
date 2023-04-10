@@ -13,6 +13,8 @@ export const CurrentTimeProvider = ({ children }: CurrentTimeProviderProps) => {
     currentTime,
     audioPlayerRef,
     progressBarRef,
+    sliderThumbRef,
+    trackProgress,
   } = useCurrentTime();
 
   return (
@@ -24,6 +26,8 @@ export const CurrentTimeProvider = ({ children }: CurrentTimeProviderProps) => {
         currentTime,
         audioPlayerRef,
         progressBarRef,
+        sliderThumbRef,
+        trackProgress,
       }}
     >
       {children}
