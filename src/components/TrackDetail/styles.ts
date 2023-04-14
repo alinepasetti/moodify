@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 import { Paragraph } from '../Text/styles';
 
 export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   max-width: 400px;
   display: flex;
