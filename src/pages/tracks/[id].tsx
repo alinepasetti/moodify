@@ -1,6 +1,6 @@
 import { ActiveTrackProvider } from 'contexts/ActiveTrackProvider';
 import { useRouter } from 'next/router';
-import TrackDetail from 'templates/TrackDetail';
+import TrackContainer from 'templates/TrackContainer';
 
 const Track = () => {
   const router = useRouter();
@@ -8,7 +8,7 @@ const Track = () => {
 
   return (
     <ActiveTrackProvider id={id as string}>
-      <TrackDetail />
+      <TrackContainer />
     </ActiveTrackProvider>
   );
 };

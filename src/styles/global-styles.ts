@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
 
   #__next {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .table {

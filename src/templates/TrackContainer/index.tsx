@@ -5,9 +5,11 @@ import { MoodContext } from '../../contexts/MoodProvider/context';
 import { RequestStatus } from '../../hooks/useFetch';
 import Heading from '../../components/Heading';
 import Head from 'next/head';
-const Track = lazy(async () => await import('../../components/TrackDetail'));
+const TrackDetail = lazy(
+  async () => await import('../../components/TrackDetail'),
+);
 
-function TrackDetail() {
+function TrackContainer() {
   const { requestStatus, activeTrack } = useContext(ActiveTrackContext);
   const { mood } = useContext(MoodContext);
 
@@ -29,7 +31,7 @@ function TrackDetail() {
             </title>
           </Head>
           <Suspense fallback={<Heading>LOADING...</Heading>}>
-            <Track />
+            <TrackDetail />
           </Suspense>
         </>
       )}
@@ -37,4 +39,4 @@ function TrackDetail() {
   );
 }
 
-export default TrackDetail;
+export default TrackContainer;

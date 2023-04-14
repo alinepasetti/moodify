@@ -7,7 +7,7 @@ export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
   box-shadow: inset 15px 15px 25px ${theme.colors[mood].secondary.shadowDark}, inset -15px -15px 25px ${theme.colors[mood].secondary.shadowLight};
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  height: 100dvh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
