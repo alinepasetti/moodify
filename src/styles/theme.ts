@@ -1,9 +1,88 @@
+import { Mood } from '../contexts/MoodProvider/types';
+
 export const theme = {
   colors: {
-    primaryColor: '#0A1128',
-    secondaryColor: '#dc143c',
+    [Mood.ABDUCT_ME]: {
+      logo: '#17b24e',
+      background: '#212121',
+      text: '#FFFFFF',
+      primary: {
+        colorLight: '#1BD35D',
+        colorDark: '#13913F',
+        shadowLight: '#1BD25C',
+        shadowDark: '#139240',
+      },
+      secondary: {
+        colorLight: '#2b2b2b',
+        colorDark: '#1b1a1a',
+        shadowLight: '#2b2b2b',
+        shadowDark: '#1b1a1a',
+        darkest: '#000000',
+        lightest: '#646464',
+      },
+      innerColor: '#FFFFFF',
+    },
+    [Mood.MIND_THE_GAP]: {
+      logo: '#B87EFB',
+      background: '#E4EBF5',
+      text: '#3fa256',
+      primary: {
+        colorLight: '#D491FF',
+        colorDark: '#9C6BD5',
+        shadowLight: '#C989FF',
+        shadowDark: '#A773E4',
+      },
+      secondary: {
+        colorLight: '#FFFFFF',
+        colorDark: '#C2C8D0',
+        shadowLight: '#F9FFFF',
+        shadowDark: '#CFD6DF',
+        darkest: '#adadad',
+        lightest: '#FFFFFF',
+      },
+      innerColor: '#410A3B',
+    },
+    [Mood.RELAX_AND_COME]: {
+      logo: '#410A3B',
+      background: '#E34747',
+      text: '#FFFFFF',
+      primary: {
+        colorLight: '#4B0C44',
+        colorDark: '#370932',
+        shadowLight: '#4f0c48',
+        shadowDark: '#31072d',
+      },
+      secondary: {
+        colorLight: '#C13C3C',
+        colorDark: '#FF5252',
+        shadowLight: '#f75959',
+        shadowDark: '#c03030',
+        darkest: '#adadad',
+        lightest: '#FFFFFF',
+      },
+      innerColor: '#FFFFFF',
+    },
+    [Mood.PACHA_MAMA]: {
+      logo: '#85B44B',
+      background: '#CECA88',
+      text: '#FFFFFF',
+      primary: {
+        colorLight: '#99CF56',
+        colorDark: '#719940',
+        shadowLight: '#97c75c',
+        shadowDark: '#729b41',
+      },
+      secondary: {
+        colorLight: '#EDE89C',
+        colorDark: '#AFAC74',
+        shadowLight: '#e5e1a4',
+        shadowDark: '#b4b16e',
+        darkest: '#a4a060',
+        lightest: '#edeabf',
+      },
+      innerColor: '#3D3C3C',
+    },
     white: '#FFFFFF',
-    mediumGray: '#DDDDDD',
   },
   font: {
     family: {

@@ -2,7 +2,7 @@ import { Title } from 'components/Heading/styles';
 import { MoodStyle } from 'contexts/MoodProvider/types';
 import styled, { css } from 'styled-components';
 
-export const Wrapper = styled.div<MoodStyle>`${({ theme, mood }) => css`
+export const Container = styled.div<MoodStyle>`${({ theme, mood }) => css`
   background: ${theme.colors[mood].background};
   box-shadow: inset 15px 15px 25px ${theme.colors[mood].secondary.shadowDark}, inset -15px -15px 25px ${theme.colors[mood].secondary.shadowLight};
   display: flex;
@@ -13,6 +13,6 @@ export const Wrapper = styled.div<MoodStyle>`${({ theme, mood }) => css`
   align-items: center;
 
   &> ${Title} {
-    color: ${theme.colors[mood].logo};;
+    color: ${theme.colors[mood].text};
   }
 `}`;

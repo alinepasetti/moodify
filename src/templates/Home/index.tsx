@@ -1,7 +1,18 @@
-import { Heading } from 'components/Heading';
+import * as Styled from './styles';
+import { useContext } from 'react';
+import Heading from '../../components/Heading';
+import { MoodContext } from '../../contexts/MoodProvider/context';
+import Moods from '../../components/Moods';
 
 function Home() {
-  return <Heading>Example</Heading>;
+  const { mood } = useContext(MoodContext);
+
+  return (
+    <Styled.Wrapper mood={mood}>
+      <Heading>moodify.</Heading>
+      <Moods />
+    </Styled.Wrapper>
+  );
 }
 
 export default Home;
